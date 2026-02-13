@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Line Task 2.2: Q-Line Wear</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <header class="page-header">
+            <h1>Q-Line Wear Koleksiyon Paketleri</h1>
+            <p>Tarzına ve ihtiyaçlarına uygun alışveriş paketini seç.</p>
+            <a href="#pricing" class="hero-btn">Paketleri İncele</a>
+        </header>
+        <!-- Başlangıç ekranı -->
+<div id="start-screen">
+    <h2>Q-Line Quiz</h2>
+    <button id="start-btn">Sınavı Başlat</button>
+</div>
+
+<!-- Quiz ekranı -->
+<div id="quiz-screen" style="display: none;">
+    <p id="progress"></p>
+    <h2 id="question-text"></h2>
+    <div id="answers"></div>
+    <p id="feedback"></p>
+</div>
+
+<!-- Sonuç ekranı -->
+<div id="result-screen" style="display: none;">
+    <h2>Sınav Bitti</h2>
+    <p id="score-text"></p>
+    <button id="restart-btn">Tekrar Başlat</button>
+</div>
+
+        <section id="pricing" class="pricing-wrapper">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Basic</h3>
+                    <div class="price-box">
+                        <span class="currency">₺</span>
+                        <span class="amount">0</span>
+                        <span class="period">/ay</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>3 Parça Günlük Kombin</li>
+                        <li>Standart Kumaş Kalitesi</li>
+                        <li>15 Gün İade</li>
+                        <li >Ücretsiz Kargo</li>
+                        <li class="disabled">Özel İndirim Yok</li>
+                
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn">Ücretsiz Dene</a>
+                </div>
+            </div>
+
+            <div class="card popular">
+                <div class="badge">En Popüler</div> 
+                
+                <div class="card-header">
+                    <h3>Trend</h3>
+                    <div class="price-box">
+                        <span class="currency">₺</span>
+                        <span class="amount">149</span>
+                        <span class="period">/ay</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>5 Parça Günlük Kombin</li>
+                        <li>Premium Kumaş Kalitesi</li>
+                        <li>Ücretsiz Kargo</li>
+                        <li>30 Gün Koşulsuz İade</li>
+                        <li>Üyelere Özel Aylık %30 İndirim</li>
+ 
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary">Hemen Başla</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Premium</h3>
+                    <div class="price-box">
+                        <span class="currency">₺</span>
+                        <span class="amount">999</span>
+                        <span class="period">/ay</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>5 Parça Günlük Kombin</li>
+                        <li>Premium Kumaş Kalitesi</li>
+                        <li>Ücretsiz Kargo</li>
+                        <li>30 Gün Koşulsuz İade</li>
+                        <li>Üyelere Özel Aylık %40 İndirim</li>
+                        <li>Kişiye Özel Stil Danışmanı</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn">İletişime Geç</a>
+                </div>
+            </div>
+
+        </section> <div class="back-link">
+            <a href="index.html">← Ana Sayfaya Dön</a>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+ </body>
+</html>

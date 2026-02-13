@@ -1,0 +1,496 @@
+/* =========================
+   GENEL AYARLAR
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* =========================
+   HEADER / NAV
+========================= */
+header {
+  background-color: #1f3a5f;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 24px;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  gap: 40px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #1f3a5f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #162b45;
+}
+
+/* =========================
+   TEAM PAGE STYLES
+========================= */
+
+.team-intro {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.team-container {
+  display: flex;                 /* FLEXBOX: ekip kartlarını yatay hizalar */
+  justify-content: center;        /* Kartları yatayda ortalar */
+  align-items: center;            /* Kartları dikeyde hizalar */
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;               /* Küçük ekranlarda alt satıra geç */
+}
+
+
+/* Kart */
+.team-card {
+  width: 250px;
+  height: 360px;
+  perspective: 1000px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.team-card:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;  /* 3D dönüş efektini aktif eder */
+}
+
+/* Mouse kartın üzerine gelince kart 180 derece döner (Flip Card efekti) */
+.team-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Ön & arka yüz */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  background-color: #fff;
+}
+
+/* Ön yüz */
+.card-front img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-front h3 {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f3a5f;
+}
+
+.card-front p {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  letter-spacing: 0.5px;
+}
+
+/* Arka yüz */
+.card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0; 
+  margin-top: 20px;
+}
+
+.card-back li {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* Sertifika */
+.certificate {
+  width: 100%;
+  margin-top: 15px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Hover ile sertifika görünür */
+.team-card:hover .certificate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Kart hover animasyonu */
+.team-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+/* Lead Developer sertifika özel efekti */
+.team-card.lead .certificate {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(31, 58, 95, 0.6);
+}
+
+/* Lead Developer kartına ekstra vurgu */
+.team-card.lead:hover {
+  transform: translateY(-15px) scale(1.03);
+}
+@media (max-width: 768px) {
+  .team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card li {
+    margin: 8px 0;
+    position: relative;
+    padding-left: 22px;
+}
+
+.card li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: green;
+    font-weight: bold;
+}
+
+.card li.disabled::before {
+    content: "✖";
+    color: red;
+}
+.card.popular {
+    transform: scale(1.05);
+    border: 2px solid #1f3a5f;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    transition: 0.3s ease;
+}
+.page-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1f3a5f, #355c8a);
+    color: white;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: white;
+    color: #1f3a5f;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+
+    .pricing-wrapper {
+        padding: 30px 15px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .page-header p {
+        font-size: 14px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+.pricing-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+@media (max-width: 900px) {
+    .pricing-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+/* QUIZ STİLİ */
+
+#start-screen,
+#quiz-screen,
+#result-screen {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#answers button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#answers button:hover {
+  background: #444;
+}
+
+#start-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+/* HESAPLAMA MODÜLÜ STİLİ */
+
+.main-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.main-container input,
+.main-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.main-container button {
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-container button:hover {
+  background: #444;
+}
+/* ===== QUIZ CARD STYLE ===== */
+
+.quiz-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+#answers button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f0f0f0;
+  transition: 0.2s;
+}
+
+#answers button:hover {
+  background: #007bff;
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.calculator-section {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+.calculator-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.calculator-card h2 {
+    margin-bottom: 15px;
+}
+
+.calculator-card input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.calculator-card button {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.calculator-card button:hover {
+    background: #333;
+}
+
+.checkbox {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.result {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Q-Line Wear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h1 class="logo">Q-Line Wear</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#paketler">Paketler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+                <li><a href="team.html">Ekibimiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO ALANI -->
+    <section class="hero">
+
+    <div class="hero-text">
+        <h1>Tarzını Q-Line ile Yenile</h1>
+        <p>Sezonun en trend kombinleri, sana özel paketlerle.</p>
+        <a href="task2.html" class="btn">Paketleri İncele</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="images/hero.jpg" alt="Q-Line Wear Koleksiyonu">
+    </div>
+
+</section>
+
+
+   <!-- PAKET TANITIM -->
+<section id="paketler" class="packages">
+    <h2>Paketlerimiz</h2>
+
+    <div class="package-grid">
+
+        <div class="package-card">
+            <h3>Basic</h3>
+            <p>Günlük kombinler için ideal başlangıç paketi.</p>
+        </div>
+
+        <div class="package-card popular">
+            <h3>Trend</h3>
+            <p>En çok tercih edilen premium kombinler.</p>
+        </div>
+
+        <div class="package-card">
+            <h3>Premium</h3>
+            <p>Özel tasarım ve kişisel stil danışmanlığı.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- HESAPLAYICI -->
+<section id="hesaplayici" class="calculator-section">
+
+    <div class="calculator-card">
+
+        <h2>Alışveriş Paket Hesaplayıcı</h2>
+
+        <label>Ürün Adedi:</label>
+        <input type="number" id="adet" value="1" min="1">
+
+        <label class="checkbox">
+            <input type="checkbox" id="premium">
+            Premium Paket (+200₺)
+        </label>
+
+        <button id="hesaplaBtn">Hesapla</button>
+
+        <p class="result">
+            Toplam: <span id="toplam">0</span> ₺
+        </p>
+        <p id="indirim-mesaj"></p>
+
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
